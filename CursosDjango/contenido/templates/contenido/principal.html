@@ -1,0 +1,37 @@
+{% extends "contenido/encabezado.html" %}
+
+{% block titulo %}PRINCIPAL {% endblock %}
+
+{% block contenedor %}
+
+<main class="px-10">
+
+  <div>
+    <table class="table table-bordered table" description="">
+        <caption>
+        <thead>
+            <tr>
+                <th>Foto</th>
+                <th>Matricula</th>
+                <th>Nombre</th>
+                <th>Carrera</th>
+                <th>Turno</th>
+
+            </tr>
+        </thead>
+
+        <tbody>
+            {%for alumno in alumnos%}
+            <tr>
+                <td class="text-center"><img src="{{alumno.imagen.url}}" alt="" class="img-media"> </td>
+                <td class="text-semibold">{{alumno.matricula}}</td>
+                <td class="muted">{{alumno.nombre}}</td>
+                <td class="muted">{{alumno.carrera}}</td>
+                <td class="muted">{{alumno.turno}}</td>
+            </tr>
+            {%endfor%}
+        </tbody>
+    </table>
+</div>
+  </main>
+{% endblock %}
